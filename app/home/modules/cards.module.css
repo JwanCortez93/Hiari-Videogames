@@ -5,5 +5,7 @@
     display: grid;
     
     grid-template-columns: repeat(3, 2fr); 
-    grid-gap: 3em;
+    grid-column-gap: 2.5em;
+    grid-row-gap: 1em;
+    
 }

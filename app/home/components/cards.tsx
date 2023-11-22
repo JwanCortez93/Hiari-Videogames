@@ -2,7 +2,6 @@
 import style from "../modules/cards.module.css";
 import { getVideogames } from "@/app/shared/videogames";
 import Card from "./card";
-import Link from "next/link";
 
 function fetchVideogames() {
   return getVideogames();
@@ -11,14 +10,12 @@ function fetchVideogames() {
 export default async function Cards() {
   const videogames = await fetchVideogames();
 
+  const { container } = style;
+
   return (
-    <div id={style.container}>
+    <div id={container}>
       {videogames.map((videogame) => {
-        return (
-          
-            <Card videogame={videogame} />
-          
-        );
+        return <Card videogame={videogame} />;
       })}
     </div>
   );

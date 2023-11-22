@@ -9,6 +9,7 @@ type Videogame = {
   tba: boolean;
   background_image: string;
   background_image_additional: string;
+  short_screenshots: {id:number,image:string}[];
   rating: number;
   playtime: number;
   dominant_color: string;

@@ -4,9 +4,13 @@ import Videogame from "../types/videogames-types";
 const apiTokenSlug = `?key=${process.env.API_RAWG}`;
 
 export async function getVideogames(): Promise<Videogame[]> {
-  const response = await fetch(`https://api.rawg.io/api/games${apiTokenSlug}`);
+  const arrayAPI = [];
+for (let i = 1; i < 4; i++) {
+  const response = await fetch(`https://api.rawg.io/api/games${apiTokenSlug}&page_size=35&page=${i}`);
   const data = await response.json() as {results:Videogame[]};
-  return data.results;
+  arrayAPI.push(...data.results);
+}
+return arrayAPI
 }
 
 export async function getVideogameById (id:string) {}

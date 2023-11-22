@@ -3,18 +3,47 @@ import style from "../modules/card.module.css";
 import Videogame from "@/app/types/videogames-types";
 
 export default function Card({ videogame }: { videogame: Videogame }) {
+  const {
+    container,
+    shadow,
+    name_container,
+    image_container,
+    name,
+    long_name,
+    longest_name,
+    image,
+    rating_released_container,
+    rating,
+    released,
+  } = style;
   return (
-    <Link href={`detail/${videogame.id}`} id={style.container}>
-      <h1 id={style.name}>{videogame.name}</h1>
-      <img
-        id={style.image}
-        alt={videogame.name}
-        src={videogame.background_image}
-      ></img>
-      <div id={style.footer}>
-        <h3 id={style.rating}>{videogame.rating}</h3>
-        <h3 id={style.released}>{videogame.released}</h3>
+    <div id={shadow}>
+    <Link href={`detail/${videogame.id}`} id={container}>
+      <div  id={name_container}>
+        <h1
+          className={
+            videogame.name.length < 20
+              ? name
+              : videogame.name.length >= 20 && videogame.name.length < 40
+              ? long_name
+              : longest_name
+          }
+        >
+          {videogame.name}
+        </h1>
+      </div>
+      <div id={image_container}>
+        <img
+          id={image}
+          alt={videogame.name}
+          src={videogame.background_image}
+        ></img>
+      </div>
+      <div id={rating_released_container}>
+        <h3 id={rating}>{videogame.rating}</h3>
+        <h3 id={released}>{videogame.released}</h3>
       </div>
     </Link>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
-import style from "./modules/page.module.css"
+
+import style from "./modules/page.module.css";
 import { Metadata } from "next";
 import NavBar from "../shared/components/nav-bar";
 import Menu from "./components/menu";
@@ -17,11 +18,12 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
+  const { main, container } = style;
   return (
     <>
       <NavBar />
-      <main id={style.main}>
-        <div className={style.container}>
+      <main id={main}>
+        <div className={container}>
           <Poster />
           <Menu />
           <Cards />
