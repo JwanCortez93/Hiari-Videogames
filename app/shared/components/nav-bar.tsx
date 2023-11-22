@@ -5,9 +5,12 @@ import NavLinks from "./nav-links";
 import SearchBar from "./search-bar";
 
 export default function NavBar() {
+
+  const {container,nav_links} = style
+
   return (
-    <div id={style.container}>
-      <div id={style.nav_links}>
+    <div id={container}>
+      <div id={nav_links}>
         <Link href="/home">
           <Logo />
         </Link>

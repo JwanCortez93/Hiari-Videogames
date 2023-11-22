@@ -3,12 +3,9 @@ import style from "../modules/cards.module.css";
 import { getVideogames } from "@/app/shared/videogames";
 import Card from "./card";
 
-function fetchVideogames() {
-  return getVideogames();
-}
 
 export default async function Cards() {
-  const videogames = await fetchVideogames();
+  const videogames = await getVideogames();
 
   const { container } = style;
 

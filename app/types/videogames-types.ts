@@ -1,6 +1,7 @@
 type Videogame = {
   id: number;
   name: string;
+  slug:string;
   description: string;
   description_raw: string;
   metacritic: number;
@@ -15,8 +16,9 @@ type Videogame = {
   dominant_color: string;
   platforms: {
     requirements: { minimum: string; recommended: string };
-    platform: Platform[];
-  };
+    released_at:string;
+    platform: Platform;
+  }[];
   stores: { store: Store }[];
   developers: Developer[];
   genres: Genre[];

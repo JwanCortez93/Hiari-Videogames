@@ -18,7 +18,7 @@ export default function Card({ videogame }: { videogame: Videogame }) {
   } = style;
   return (
     <div id={shadow}>
-    <Link href={`detail/${videogame.id}`} id={container}>
+    <Link href={`detail/${videogame.slug}`} id={container}>
       <div  id={name_container}>
         <h1
           className={

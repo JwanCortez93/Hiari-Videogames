@@ -1,0 +1,64 @@
+#container {
+}
+
+#name {
+}
+
+#release_date {
+}
+
+#playtime {
+}
+
+#image_container {
+  .image {
+    height: 20em;
+    width: 50%;
+    object-fit: cover;
+  }
+}
+#ratings_container {
+  #esrb_rating {
+  }
+
+  #rating {
+  }
+
+  #metacritic {
+  }
+
+  .metacritic_platform {
+  }
+}
+#genres_container {
+  .genre_item {
+  }
+}
+
+#platforms_container {
+  .platform_item {
+  }
+}
+
+#stores_container {
+  .store_item {
+  }
+}
+
+#tags_container {
+  .tag_item {
+  }
+}
+
+#developers_container {
+  .developer_item {
+  }
+}
+
+#publishers_container {
+  .publisher_item {
+  }
+}
+
+#description_container {
+}

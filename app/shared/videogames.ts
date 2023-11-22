@@ -13,7 +13,17 @@ for (let i = 1; i < 4; i++) {
 return arrayAPI
 }
 
-export async function getVideogameById (id:string) {}
+export async function getVideogameById (id:string): Promise<Videogame> {
+  const response = await fetch(`https://api.rawg.io/api/games/${id}${apiTokenSlug}`);
+  const data = await response.json() as Videogame;
+  return data
+} 
+export async function getVideogameScreenshots (id:string): Promise<{id:number,image:string}[]> {
+  const response = await fetch(`https://api.rawg.io/api/games/${id}/screenshots${apiTokenSlug}`);
+  const data = await response.json() as {results:{id:number,image:string}[]};
+  return data.results
+}
+
 export async function getVideogamesByName (name:string) {}
 export async function createVideogame (videogame:Videogame) {}
 export async function modifyVideogame (id:string, videogame:Videogame) {}
