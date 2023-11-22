@@ -1,22 +1,25 @@
 // import mock from '../../data/mock.json'
-import { getVideogames } from '@/app/shared/videogames'
-import Card from './card'
-import Videogame from '@/app/types/videogames-types';
+import style from "../modules/cards.module.css";
+import { getVideogames } from "@/app/shared/videogames";
+import Card from "./card";
+import Link from "next/link";
 
+function fetchVideogames() {
+  return getVideogames();
+}
 
+export default async function Cards() {
+  const videogames = await fetchVideogames();
 
-export default async function Cards () {
-    const videogames = await getVideogames()
-    
-    
-    return (
-        <div>
-            <h1>Cards Component</h1>
-            {videogames.map(videogame=>{
-                return (
-                    <Card videogame={videogame}/>
-                )
-            })}
-        </div>
-    )
+  return (
+    <div id={style.container}>
+      {videogames.map((videogame) => {
+        return (
+          
+            <Card videogame={videogame} />
+          
+        );
+      })}
+    </div>
+  );
 }

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
-import Footer from "../shared/footer";
-import NavBar from "../shared/nav-bar";
+import Footer from "../shared/components/footer";
+import NavBar from "../shared/components/nav-bar";
 
 export const metadata: Metadata = {
   title: "Hiari Create | Juan Martin Cortez",
