@@ -7,6 +7,7 @@ import {
 } from "@/app/shared/videogames";
 import { Metadata } from "next";
 import DetailCard from "./components/detail-card";
+import Test from "./components/test";
 
 type Props = {
   params: { slug: string };
@@ -38,6 +39,7 @@ export default async function page({ params }: Props) {
         </div>
         <div className={container}>
           <DetailCard videogame={videogame} screenshots={screenshots} />
+          {/* <Test /> */}
         </div>
       </main>
       <Footer />
