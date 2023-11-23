@@ -52,7 +52,8 @@
     //^ theme
 // todo: Am I Feeling Lucky Page
     //^ Backcards with logo that turn around when clicked
-//? change favicon
+//? Change favicon
+//? Apply Breadcrumbs
 
     
     

@@ -19,6 +19,7 @@ export default function DetailCard({
     esrb_rating,
     rating,
     metacritic,
+    metacritic_platform_container,
     metacritic_platform,
     genres_container,
     genre_item,
@@ -33,27 +34,35 @@ export default function DetailCard({
     developers_container,
     developer_item,
     description_container,
+    buttons_container,
+    button,
   } = style;
   return (
-    <div style={{ backgroundColor: videogame.dominant_color }} id={container}>
+    <div 
+    // style={{ backgroundColor: `#${videogame.dominant_color}` }} 
+    id={container}>
+      {videogame.playtime ? (
+        <h4 id={playtime}>Playtime: {videogame.playtime} hs</h4>
+      ) : null}
       <h1 id={name}>This is {videogame.name}'s detail page</h1>
-      <h2 id={release_date}>Release date: {videogame.tba ? "TBA" : videogame.released}</h2>
-      {videogame.playtime ? <h2 id={playtime}>Playtime: {videogame.playtime} hs</h2> : null}
+      <h2 id={release_date}>
+        Release date: {videogame.tba ? "TBA" : videogame.released}
+      </h2>
       <div id={image_container}>
         <img className={image} src={videogame.background_image}></img>
-        <img
-          className={image}
-          src={videogame.background_image_additional}
-        ></img>
-        {screenshots.map((screenshot) => {
-          return (
-            <img
-              className={image}
-              key={screenshot.id}
-              src={screenshot.image}
-            ></img>
-          );
-        })}
+        {/* <img
+            className={image}
+            src={videogame.background_image_additional}
+          ></img>
+          {screenshots.map((screenshot) => {
+            return (
+              <img
+                className={image}
+                key={screenshot.id}
+                src={screenshot.image}
+              ></img>
+            );
+          })} */}
       </div>
       <div id={ratings_container}>
         {videogame.esrb_rating ? (
@@ -63,57 +72,72 @@ export default function DetailCard({
         {videogame.metacritic ? (
           <h2 id={metacritic}>Metacritic: {videogame.metacritic}</h2>
         ) : null}
-        {videogame.metacritic_platforms.length > 0
-          ? videogame.metacritic_platforms.map((metacritic) => {
+        {videogame.metacritic_platforms.length > 0 ? (
+          <div id={metacritic_platform_container}>
+            {" "}
+            {videogame.metacritic_platforms.map((metacritic) => {
               return (
                 <h3 className={metacritic_platform}>
                   The metacritic in {metacritic.platform.name} is{" "}
                   {metacritic.metascore}
                 </h3>
               );
-            })
-          : null}
+            })}
+          </div>
+        ) : null}
       </div>
-      <h2>This is the color: {videogame.dominant_color}</h2>
-      <h2 id={genres_container}>
-        This are the genres:{" "}
+      {/* <h2>This is the color: {videogame.dominant_color}</h2> */}
+      <div id={genres_container}>
+        <h2>This are the genres: </h2>
         {videogame.genres.map((genre) => {
-          return <h5 className={genre_item}>{genre.name}</h5>
+          return <h5 className={genre_item}>{genre.name}</h5>;
         })}
-      </h2>
-      <h2 id={platforms_container}>
-        This are the platforms:{" "}
+      </div>
+      <div id={platforms_container}>
+        <h2>This are the platforms: </h2>
         {videogame.platforms.map((platform) => {
-          return <h5 className={platform_item}>{platform.platform.name}</h5>
+          return <h5 className={platform_item}>{platform.platform.name}</h5>;
         })}
-      </h2>
-      <h2 id={stores_container}>
-        This are the stores:{" "}
+      </div>
+      <div id={stores_container}>
+        <h2>This are the stores: </h2>
         {videogame.stores.map((store) => {
-          return <h5 className={store_item}>{store.store.name}</h5>
+          return <h5 className={store_item}>{store.store.name}</h5>;
         })}
-      </h2>
-      <h2 id={tags_container}>
-        This are the tags:{" "}
+      </div>
+      <div id={tags_container}>
+        <h2>This are the tags: </h2>
         {videogame.tags.map((tag) => {
-          return <h5 className={tag_item}>{tag.name}</h5>
+          return <h5 className={tag_item}>{tag.name}</h5>;
         })}
-      </h2>
-      <h2 id={developers_container}>
-        This are the developers:{" "}
+      </div>
+      <div id={developers_container}>
+        <h2>This are the developers: </h2>
         {videogame.developers.map((developer) => {
-          return <h5 className={developer_item}>{developer.name}</h5>
+          return <h5 className={developer_item}>{developer.name}</h5>;
         })}
-      </h2>
-      <h2 id={publishers_container}>
-        This are the publishers:{" "}
+      </div>
+      <div id={publishers_container}>
+        <h2>This are the publishers: </h2>
         {videogame.publishers.map((publisher) => {
-          return <h5 className={publisher_item}>{publisher.name}</h5>
+          return <h5 className={publisher_item}>{publisher.name}</h5>;
         })}
-      </h2>
-      
+      </div>
 
-      <h3 id={description_container}>Description: {videogame.description_raw}</h3>
+      <h3 id={description_container}>
+        Description: {videogame.description_raw}
+      </h3>
+      <div id={buttons_container}>
+        <div className={button}>
+          <button>Add to favorites</button>
+        </div>
+        <div className={button}>
+          <button>Add to wishlist</button>
+        </div>
+        <div className={button}>
+          <button>Comment</button>
+        </div>
+      </div>
     </div>
   );
 }

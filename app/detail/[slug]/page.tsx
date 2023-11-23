@@ -1,7 +1,10 @@
 import style from "./modules/page.module.css";
 import Footer from "@/app/shared/components/footer";
 import NavBar from "@/app/shared/components/nav-bar";
-import { getVideogameById, getVideogameScreenshots } from "@/app/shared/videogames";
+import {
+  getVideogameById,
+  getVideogameScreenshots,
+} from "@/app/shared/videogames";
 import { Metadata } from "next";
 import DetailCard from "./components/detail-card";
 
@@ -21,18 +24,23 @@ export const metadata: Metadata = {
 
 export default async function page({ params }: Props) {
   const videogame = await getVideogameById(params.slug);
-  const screenshots = await getVideogameScreenshots(params.slug)
-  const { main, container } = style;
+  const screenshots = await getVideogameScreenshots(params.slug);
+  const { main, container, background } = style;
   return (
     <>
       <NavBar />
       <main id={main}>
+        <div style={{backgroundColor:"black"}}>
+          <img
+          src={videogame.background_image}
+          alt="Background"
+          id={background}></img>
+        </div>
         <div className={container}>
-        <h1>This is {videogame.name}'s page</h1>
-        <DetailCard videogame={videogame} screenshots={screenshots}/>
-      </div>
+          <DetailCard videogame={videogame} screenshots={screenshots} />
+        </div>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
