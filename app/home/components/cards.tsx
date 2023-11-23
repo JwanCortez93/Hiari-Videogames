@@ -12,7 +12,7 @@ export default async function Cards() {
   return (
     <div id={container}>
       {videogames.map((videogame) => {
-        return <Card videogame={videogame} />;
+        return <Card key={videogame.id} videogame={videogame} />;
       })}
     </div>
   );

@@ -38,25 +38,32 @@ export default function DetailCard({
     button,
   } = style;
   return (
-    <div 
-    // style={{ backgroundColor: `#${videogame.dominant_color}` }} 
-    id={container}>
+    <div
+      // style={{ backgroundColor: `#${videogame.dominant_color}` }}
+      id={container}
+    >
       {videogame.playtime ? (
         <h4 id={playtime}>Playtime: {videogame.playtime} hs</h4>
       ) : null}
-      <h1 id={name}>This is {videogame.name}'s detail page</h1>
+      <h1 id={name}>{videogame.name}</h1>
       <h2 id={release_date}>
         Release date: {videogame.tba ? "TBA" : videogame.released}
       </h2>
       <div id={image_container}>
-        <img className={image} src={videogame.background_image}></img>
+        <img
+          alt={`${videogame.name}-1`}
+          className={image}
+          src={videogame.background_image}
+        ></img>
         {/* <img
             className={image}
             src={videogame.background_image_additional}
+            alt={`${videogame.name}-2`}
           ></img>
-          {screenshots.map((screenshot) => {
+          {screenshots.map((screenshot,index) => {
             return (
               <img
+              alt={`${videogame.name}-${index+3}`}
                 className={image}
                 key={screenshot.id}
                 src={screenshot.image}
@@ -75,9 +82,9 @@ export default function DetailCard({
         {videogame.metacritic_platforms.length > 0 ? (
           <div id={metacritic_platform_container}>
             {" "}
-            {videogame.metacritic_platforms.map((metacritic) => {
+            {videogame.metacritic_platforms.map((metacritic, index) => {
               return (
-                <h3 className={metacritic_platform}>
+                <h3 key={index} className={metacritic_platform}>
                   The metacritic in {metacritic.platform.name} is{" "}
                   {metacritic.metascore}
                 </h3>
@@ -90,37 +97,61 @@ export default function DetailCard({
       <div id={genres_container}>
         <h2>This are the genres: </h2>
         {videogame.genres.map((genre) => {
-          return <h5 className={genre_item}>{genre.name}</h5>;
+          return (
+            <h5 key={genre.id} className={genre_item}>
+              {genre.name}
+            </h5>
+          );
         })}
       </div>
       <div id={platforms_container}>
         <h2>This are the platforms: </h2>
         {videogame.platforms.map((platform) => {
-          return <h5 className={platform_item}>{platform.platform.name}</h5>;
+          return (
+            <h5 key={platform.platform.id} className={platform_item}>
+              {platform.platform.name}
+            </h5>
+          );
         })}
       </div>
       <div id={stores_container}>
         <h2>This are the stores: </h2>
         {videogame.stores.map((store) => {
-          return <h5 className={store_item}>{store.store.name}</h5>;
+          return (
+            <h5 key={store.store.id} className={store_item}>
+              {store.store.name}
+            </h5>
+          );
         })}
       </div>
       <div id={tags_container}>
         <h2>This are the tags: </h2>
         {videogame.tags.map((tag) => {
-          return <h5 className={tag_item}>{tag.name}</h5>;
+          return (
+            <h5 key={tag.id} className={tag_item}>
+              {tag.name}
+            </h5>
+          );
         })}
       </div>
       <div id={developers_container}>
         <h2>This are the developers: </h2>
         {videogame.developers.map((developer) => {
-          return <h5 className={developer_item}>{developer.name}</h5>;
+          return (
+            <h5 key={developer.id} className={developer_item}>
+              {developer.name}
+            </h5>
+          );
         })}
       </div>
       <div id={publishers_container}>
         <h2>This are the publishers: </h2>
         {videogame.publishers.map((publisher) => {
-          return <h5 className={publisher_item}>{publisher.name}</h5>;
+          return (
+            <h5 key={publisher.id} className={publisher_item}>
+              {publisher.name}
+            </h5>
+          );
         })}
       </div>
 

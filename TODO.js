@@ -30,6 +30,7 @@
     //^ Head
         //^ NavBar
         //^ SearchBar
+        //^ Profile
     //^ Footer
 // todo: Home Page
     //^ Menu component
