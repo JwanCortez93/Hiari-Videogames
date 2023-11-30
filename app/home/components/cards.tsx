@@ -1,6 +1,6 @@
 // import mock from '../../data/mock.json'
 import style from "../modules/cards.module.css";
-import { getVideogames } from "@/app/shared/videogames";
+import { getVideogames } from "@/app/shared/api/videogames";
 import Card from "./card";
 
 

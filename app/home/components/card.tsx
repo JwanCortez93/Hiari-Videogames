@@ -20,7 +20,7 @@ export default function Card({ videogame }: { videogame: Videogame }) {
     <div id={shadow}>
     <Link href={`detail/${videogame.slug}`} id={container}>
       <div  id={name_container}>
-        <h1
+        {videogame.name?<h1
           className={
             videogame.name.length < 20
               ? name
@@ -30,7 +30,8 @@ export default function Card({ videogame }: { videogame: Videogame }) {
           }
         >
           {videogame.name}
-        </h1>
+        </h1>:null}
+        
       </div>
       <div id={image_container}>
         <img

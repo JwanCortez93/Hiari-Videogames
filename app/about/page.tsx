@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <>
-      <NavBar />
+      <div style={{position:"fixed", zIndex:"10000", width:"100%"}}>
+<NavBar />
+</div>
       <main>
         <div className="container">
           <h1>About Page</h1>

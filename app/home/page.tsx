@@ -21,7 +21,9 @@ export default function page() {
   const { main, container } = style;
   return (
     <>
-      <NavBar />
+      <div style={{position:"fixed", zIndex:"10000", width:"100%"}}>
+<NavBar />
+</div>
       <main id={main}>
         <div className={container}>
           <Poster />

@@ -59,8 +59,8 @@ export default function DetailCard({
             className={image}
             src={videogame.background_image_additional}
             alt={`${videogame.name}-2`}
-          ></img>
-          {screenshots.map((screenshot,index) => {
+          ></img> */}
+        {/*   {screenshots.map((screenshot,index) => {
             return (
               <img
               alt={`${videogame.name}-${index+3}`}

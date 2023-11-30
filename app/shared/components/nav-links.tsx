@@ -1,12 +1,15 @@
 import Link from "next/link";
+import style from "../modules/nav-links.module.css"
 
 export default function NavLinks () {
+    
+const {container, divLink} = style
+
     return (
-        <div>
-            <Link href="/about">About</Link>
-            <Link href="/favorites">Favorites</Link>
-            <Link href="/create">Create</Link>
-            <Link href="/settings">Settings</Link>
+        <div id={container}>
+            <Link className={divLink} href="/about">About</Link>
+            <Link className={divLink} href="/collection">Collection</Link>
+            <Link className={divLink} href="/create">Create</Link>
         </div>
     )
 }

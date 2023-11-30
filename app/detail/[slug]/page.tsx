@@ -4,7 +4,7 @@ import NavBar from "@/app/shared/components/nav-bar";
 import {
   getVideogameById,
   getVideogameScreenshots,
-} from "@/app/shared/videogames";
+} from "@/app/shared/api/videogames";
 import { Metadata } from "next";
 import DetailCard from "./components/detail-card";
 import Test from "./components/test";
@@ -29,11 +29,13 @@ export default async function page({ params }: Props) {
   const { main, container, background } = style;
   return (
     <>
-      <NavBar />
+      <div style={{position:"fixed", zIndex:"10000", width:"100%"}}>
+<NavBar />
+</div>
       <main id={main}>
         <div style={{backgroundColor:"black"}}>
           <img
-          src={videogame.background_image}
+          src={videogame.background_image_additional}
           alt="Background"
           id={background}></img>
         </div>

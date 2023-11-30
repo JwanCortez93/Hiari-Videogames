@@ -55,6 +55,7 @@
     //^ Backcards with logo that turn around when clicked
 //? Change favicon
 //? Apply Breadcrumbs
+//? Apply Skeleton and Loading Screen
 
     
     

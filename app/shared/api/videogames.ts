@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
-import Videogame from "../types/videogames-types";
+import Videogame from "../../types/videogames-types";
 import Keyv from "keyv";
+
 
 const keyv = new Keyv();
 const apiTokenSlug = `?key=${process.env.API_RAWG}`;
