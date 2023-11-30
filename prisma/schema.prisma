@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Videogames {
+  id                          String                @id @default(uuid())
+  name                        String
+  slug                        String                @unique
+  description                 String?
+  description_raw             String
+  metacritic                  Float?
+  metacritic_platforms        MetacriticPlatforms[]
+  released                    String?
+  tba                         Boolean               @default(false)
+  background_image            String
+  background_image_additional String?
+  short_screenshots           Screenshots[]
+  rating                      Float?
+  playtime                    Float?
+  dominant_color              String?
+  platforms                   Platform[]
+  stores                      Store[]
+  developer                   Developer[]
+  genres                      Genre[]
+  tags                        Tag[]
+  publisher                   Publisher[]
+  esrb_rating                 ESRBRating[]
+}
+
+model Screenshots {
+  id           Int         @id @default(autoincrement())
+  image        String
+  Videogames   Videogames? @relation(fields: [videogamesId], references: [id])
+  videogamesId String?
+}
+
+model MetacriticPlatforms {
+  id         String       @id @default(uuid())
+  videogames Videogames[]
+}
+
+model Platform {
+  id                       String       @id @default(uuid())
+  name                     String       @unique
+  slug                     String       @unique
+  year_start               Int?
+  games_count              Int?
+  min_requirements         String?
+  recommended_requirements String?
+  videogames               Videogames[]
+}
+
+model Store {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  slug        String       @unique
+  games_count Int?
+  videogames  Videogames[]
+}
+
+model Developer {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  slug        String       @unique
+  games_count Int?
+  videogames  Videogames[]
+}
+
+model Genre {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  slug        String       @unique
+  games_count Int?
+  videogames  Videogames[]
+}
+
+model Tag {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  slug        String       @unique
+  games_count Int?
+  videogames  Videogames[]
+}
+
+model Publisher {
+  id          String       @id @default(uuid())
+  name        String       @unique
+  slug        String       @unique
+  games_count Int?
+  videogames  Videogames[]
+}
+
+model ESRBRating {
+  id         String       @id @default(uuid())
+  name       String       @unique
+  slug       String       @unique
+  videogames Videogames[]
+}
