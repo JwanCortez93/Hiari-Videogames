@@ -1,3 +1,9 @@
+//~DATABASE (Prisma)
+//* Create Videogames database (V.0.1)
+//* Create Prisma schema (V.0.1)
+//* Relations (V.0.1)
+//! Remember: Platforms and Store are different from API and from DATABASE
+
 //~BACK
 // todo: auth
     //^ socials connections?
@@ -25,7 +31,11 @@
 // todo: publishers?
 
 //~FRONT
+
+//! Use signals instead of hooks!
+
 // todo: Landing Page
+    //^ Login and Validations
 // todo: Shared components
     //^ Head
         //^ NavBar
