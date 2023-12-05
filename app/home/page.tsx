@@ -1,4 +1,3 @@
-
 import style from "./modules/page.module.css";
 import { Metadata } from "next";
 import NavBar from "../shared/components/nav-bar";
@@ -18,13 +17,13 @@ export const metadata: Metadata = {
 };
 
 export default function page() {
-  const { main, container } = style;
+  const { container } = style;
   return (
     <>
-      <div style={{position:"fixed", zIndex:"10000", width:"100%"}}>
-<NavBar />
-</div>
-      <main id={main}>
+      <div style={{ position: "fixed", zIndex: "10000", width: "100%" }}>
+        <NavBar />
+      </div>
+      <main>
         <div className={container}>
           <Poster />
           <Menu />

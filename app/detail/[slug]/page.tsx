@@ -26,13 +26,13 @@ export const metadata: Metadata = {
 export default async function page({ params }: Props) {
   const videogame = await getVideogameById(params.slug);
   const screenshots = await getVideogameScreenshots(params.slug);
-  const { main, container, background } = style;
+  const { container, background } = style;
   return (
     <>
       <div style={{position:"fixed", zIndex:"10000", width:"100%"}}>
 <NavBar />
 </div>
-      <main id={main}>
+      <main >
         <div style={{backgroundColor:"black"}}>
           <img
           src={videogame.background_image_additional}
