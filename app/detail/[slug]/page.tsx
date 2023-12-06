@@ -4,7 +4,7 @@ import NavBar from "@/app/shared/components/nav-bar";
 import {
   getVideogameById,
   getVideogameScreenshots,
-} from "@/app/shared/api/videogames";
+} from "@/app/shared/api/utils/videogames";
 import { Metadata } from "next";
 import DetailCard from "./components/detail-card";
 import Test from "./components/test";

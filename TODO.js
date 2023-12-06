@@ -1,6 +1,16 @@
 //~DATABASE (Prisma)
 //* Create Videogames database (V.0.1)
 //* Create Prisma schema (V.0.1)
+    //// Videogames
+    //// Genre
+    //// Platform
+    //// Developer
+    //// Publisher
+    //// Tag
+    //// Store
+    //^ User
+    //^ Preferences
+    //^ Options
 //* Relations (V.0.1)
 //! Remember: Platforms and Store are different from API and from DATABASE
 

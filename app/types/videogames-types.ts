@@ -1,4 +1,4 @@
-type Videogame = {
+export type Videogame = {
   id: number;
   name: string;
   slug:string;
@@ -27,7 +27,7 @@ type Videogame = {
   esrb_rating: { id: number; name: string; slug: string };
 };
 
-type MetacriticPlatforms = {
+export type MetacriticPlatforms = {
   metascore: number;
   url: string;
   platform: {
@@ -37,7 +37,7 @@ type MetacriticPlatforms = {
   };
 };
 
-type Platform = {
+export type Platform = {
   id: number;
   name: string;
   slug: string;
@@ -45,39 +45,39 @@ type Platform = {
   games_count: number;
 };
 
-type Store = {
+export type Store = {
   id: number;
   name: string;
   slug: string;
   games_count: number;
 };
 
-type Developer = {
+export type Developer = {
   id: number;
   name: string;
   slug: string;
   games_count: number;
 };
 
-type Genre = {
+export type Genre = {
   id: number;
   name: string;
   slug: string;
   games_count: number;
 };
 
-type Tag = {
+export type Tag = {
   id: number;
   name: string;
   slug: string;
   games_count: number;
 };
 
-type Publisher = {
+export type Publisher = {
   id: number;
   name: string;
   slug: string;
   games_count: number;
 };
 
-export default Videogame;
+
