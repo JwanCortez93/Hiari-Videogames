@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "gunplay";
+
+  src: url("/public/fonts/gunplay.otf");
+}
+
+#body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+#container {
+  padding: 2em;
+  border-radius: 1em;
+  background-color: rgba(69, 0, 0, 0.503);
+  box-shadow: 0em 0.5em 1.5em 0.5em rgba(203, 55, 55, 0.986);
+}
+
+#title {
+  color: rgb(200, 0, 0);
+  font-family: "gunplay";
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+
+  margin: 0.5em 0em;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.input {
+  border-radius: 1em;
+  padding: 0.5em 0em;
+  padding-left: 1em;
+  font-size: 1em;
+  width: 18em;
+
+  background-color: rgba(203, 55, 55, 0.986);
+  color: rgba(255, 255, 255, 0.864);
+  border-style: ridge;
+}
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.49);
+}
+
+.input:focus {
+  outline: none;
+  background-color: rgb(200, 0, 0);
+}
+
+.button {
+  border-radius: 0.5em;
+  cursor: pointer;
+  padding: 0.5em 0em;
+  width: 40%;
+  height: 100%;
+  background-color: #b6141497;
+  color: rgba(255, 255, 255, 0.49);
+  border-style: outset;
+  font-size: 1em;
+  font-weight: bold;
+}
+.button:hover {
+  color: rgba(255, 255, 255, 0.864);
+  background-color: #941818;
+}
+
+.error_message {
+  background-color: red;
+  width: 100%;
+  font-weight: 300;
+  margin-top: 1em;
+  padding: 0.2em 0.4em;
+  border-radius: 0.5em;
+}
+
+.footer {
+  color: rgba(255, 255, 255, 0.458);
+  font-weight: 300;
+}
+#register {
+  color: rgb(200, 0, 0);
+}
+#register:hover {
+  color: rgb(249, 81, 81);
+  text-decoration: underline;
+}

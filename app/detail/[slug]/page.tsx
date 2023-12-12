@@ -1,13 +1,11 @@
 import style from "./modules/page.module.css";
 import Footer from "@/app/shared/components/footer";
 import NavBar from "@/app/shared/components/nav-bar";
-import {
-  getVideogameById,
-  getVideogameScreenshots,
-} from "@/app/shared/api/utils/videogames";
+
 import { Metadata } from "next";
 import DetailCard from "./components/detail-card";
 import Test from "./components/test";
+import { getVideogameById, getVideogameScreenshots } from "@/app/api/utils/videogames";
 
 type Props = {
   params: { slug: string };

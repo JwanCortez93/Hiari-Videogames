@@ -29,3 +29,20 @@
 #container:hover .divLink:not(:hover) {
     color: rgb(107, 1, 1, 0.2);
 }
+
+#profile_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5em;
+    height:1.5em;
+    overflow: hidden;
+    
+    background-color: rgba(255, 255, 255, 0.617);
+    padding: 0.35em;
+    border-radius: 50%;
+}
+
+#profile_icon:hover {
+    background-color: rgb(255, 255, 255);
+}

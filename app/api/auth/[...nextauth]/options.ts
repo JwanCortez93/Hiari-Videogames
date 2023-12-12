@@ -12,10 +12,8 @@ export const options: NextAuthOptions = {
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
     CredentialsProvider({
+      name: "Email",
       credentials: {
-        Username: {
-          type: "text",
-        },
         Email: {
           type: "email",
         },
@@ -23,12 +21,21 @@ export const options: NextAuthOptions = {
           type: "password",
         },
       },
+
       async authorize(credentials) {
         const user = await prisma.user.findUnique({
-          where: { username: credentials?.Username },
+          where: { email: credentials?.Email },
         });
         return credentials?.Password === user?.password ? user : null;
       },
     }),
   ],
+  pages: {
+    signIn: "/signin",
+    signOut: "/signout",
+  },
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
 };

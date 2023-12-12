@@ -1,6 +1,7 @@
 import Link from "next/link";
 import style from "../modules/card.module.css";
-import Videogame from "@/app/types/videogames-types";
+import { Videogame } from "@/app/types/videogames-types";
+
 
 export default function Card({ videogame }: { videogame: Videogame }) {
   const {
