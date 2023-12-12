@@ -17,6 +17,8 @@
 //~BACK
 // todo: auth
     //^ socials connections?
+    //! FIX LOGIN AND SIGNUP
+    //! ADD LOGOUT
 // todo: videogames
     ////getVideogames()
     ////getVideogamesById()
@@ -42,7 +44,9 @@
 
 //~FRONT
 
-//! Use signals instead of hooks!
+//! Replace hooks for signals!
+//! Remove all console.logs
+//! Remove all :any
 
 // todo: Landing Page
     //^ Login and Validations

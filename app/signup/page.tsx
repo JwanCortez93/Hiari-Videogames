@@ -36,8 +36,6 @@ export default function page() {
       body: JSON.stringify({ email }),
     });
 
-    console.log(emailExists.json);
-
     if (!username || !email || !password || !passwordCheck)
       setError("Fields are incomplete");
     else if (!password === passwordCheck) {

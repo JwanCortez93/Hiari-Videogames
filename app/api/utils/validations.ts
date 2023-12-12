@@ -8,7 +8,7 @@ export async function validateLoginEmail(email: string, username?: string) {
       where: { email: email },
     });
 
-    console.log(findEmail);
+    
 
     return findEmail;
   } catch (error) {
