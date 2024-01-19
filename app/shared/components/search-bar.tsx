@@ -5,9 +5,9 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import Link from "next/link";
 import style from "../modules/search-bar.module.css";
-import { signal } from "@preact/signals-react";
+import { effect, signal } from "@preact/signals-react";
 import { Videogame } from "@/app/types/videogames-types";
-import { useEffect } from "react";
+import { ReactNode } from "react";
 
 export default function SearchBar() {
   const {
@@ -21,7 +21,7 @@ export default function SearchBar() {
   } = style;
 
   const searchInput = signal("");
-  const gamePredictions = signal([] as Videogame[]);
+  const gamePredictions = signal([{ id: 34 }] as Videogame[]);
 
   async function handleChange(e: any) {
     if (e.target.value.length >= 3) {
@@ -34,7 +34,6 @@ export default function SearchBar() {
       gamePredictions.value = videogames;
     } else gamePredictions.value = [];
   }
-  
 
   return (
     <div id={container}>
@@ -44,19 +43,18 @@ export default function SearchBar() {
           className={input}
           placeholder="Search..."
         ></input>
-        {gamePredictions.value.length > 0 ? (
-          <div>
-            <ul>
-              {gamePredictions.value.map((videogame: Videogame) => {
-                return (
-                  <Link href={`/detail/${videogame.id}`}>
-                    <li>Hello</li>
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
-        ) : null}
+        <div id={predictions_box}>
+          <ul>
+            {gamePredictions.value.map((videogame: Videogame) => {
+              return (
+                <Link href={`/detail/${videogame.id}`}>
+                  <li>Hello</li>
+                </Link>
+              );
+            })}
+          </ul>
+        </div>
+
         <div id={buttons_container}>
           <button className={button}>
             <FontAwesomeIcon icon={faMagnifyingGlass} className={search_icon} />

@@ -2,6 +2,7 @@ import fetch from "node-fetch";
 import { Videogame } from "@/app/types/videogames-types";
 import Keyv from "keyv";
 import data from "@/app/data/mock.json";
+import { oneYearAgo } from "./shared-methods";
 
 const keyv = new Keyv();
 const apiTokenSlug = `?key=${process.env.API_RAWG}`;
@@ -26,6 +27,7 @@ export async function getVideogames(): Promise<Videogame[]> {
   if (arrayAPI.length === 0) {
     return mock as any;
   }
+  await keyv.set("videogames", arrayAPI);
   return arrayAPI;
 }
 
@@ -55,6 +57,15 @@ export async function getVideogameScreenshots(
   return data.results;
 }
 
+export async function getLatestVideogames(): Promise<Videogame[]> {
+  const today = oneYearAgo().today;
+  const yearAgo = oneYearAgo().oneYearAgo;
+  const response = await fetch(
+    `https://api.rawg.io/api/games${apiTokenSlug}&ordering=-metacritic&dates=${yearAgo},${today}`
+  );
+  const data = (await response.json()) as { results: Videogame[] };
+  return data.results.slice(0, 6);
+}
 export async function getVideogamesByName(name: string) {}
 export async function createVideogame(videogame: Videogame) {}
 export async function modifyVideogame(id: string, videogame: Videogame) {}

@@ -47,6 +47,7 @@
 //! Replace hooks for signals!
 //! Remove all console.logs
 //! Remove all :any
+//! Remove all uses of mock
 
 // todo: Landing Page
     //^ Login and Validations
@@ -80,6 +81,7 @@
 //? Change favicon
 //? Apply Breadcrumbs
 //? Apply Skeleton and Loading Screen
+//? Apply Lazy Loading
 
     
     

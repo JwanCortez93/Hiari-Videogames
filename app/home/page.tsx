@@ -6,7 +6,6 @@ import Cards from "./components/cards";
 import Footer from "../shared/components/footer";
 import Poster from "./components/poster";
 
-
 export const metadata: Metadata = {
   title: "Hiari Videogames | Juan Martin Cortez",
   openGraph: {
@@ -25,8 +24,8 @@ export default function page() {
         <NavBar />
       </div>
       <main>
+        <Poster />
         <div className={container}>
-          <Poster />
           <Menu />
           <Cards />
         </div>
